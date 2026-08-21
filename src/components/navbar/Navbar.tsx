@@ -65,7 +65,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(
       hoverAnimations[hoverAnimation]?.(navbarRef.current!);
     };
 
-    const handleMouseLeave = () => {
+   const handleMouseLeave = () => {
       gsap.to(navbarRef.current, {
         scale: 1,
         rotation: 0,
@@ -78,24 +78,18 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(
       <Comp
         ref={(node) => {
           navbarRef.current = node as HTMLElement;
-          if (typeof ref === "function") ref(node as HTMLElement);
-          else if (ref)
-            (ref as React.MutableRefObject<HTMLElement | null>).current = node;
+          if (typeof ref === "function") {
+            ref(node as HTMLElement);
+          } else if (ref) {
+            (ref as { current: HTMLElement | null }).current = node;
+          }
         }}
         className={cn(navbarVariants({ variant, size }), className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <h1>Logo</h1>
-        <div className="flex gap-5">
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Customer</a>
-        </div>
-        <div>
-          <Button hoverAnimation="none">Profile</Button>
-        </div>
+        {props.children}
       </Comp>
     );
   }
