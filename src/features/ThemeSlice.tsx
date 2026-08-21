@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export type ThemeState = {
   mode: "light" | "dark";
@@ -14,12 +14,9 @@ const themeSlice = createSlice({
   reducers: {
     toggleTheme: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
-      localStorage.setItem("theme", state.mode);
-      document.documentElement.setAttribute("data-theme", state.mode);
     },
-    setTheme: (state, action) => {
+    setTheme: (state, action: PayloadAction<"light" | "dark">) => {
       state.mode = action.payload;
-      document.documentElement.setAttribute("data-theme", action.payload);
     },
   },
 });
