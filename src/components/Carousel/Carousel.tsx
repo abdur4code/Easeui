@@ -21,6 +21,8 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     ...props 
   }, ref) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    // 1. Add state to track mouse hover
+    const [isPaused, setIsPaused] = useState(false);
 
     const nextSlide = useCallback(() => {
       setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
@@ -30,12 +32,13 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
       setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
     };
 
-    // Handle Auto-play
+    // 2. Tie the interval to both autoPlay AND the isPaused state
     useEffect(() => {
-      if (!autoPlay) return;
+      if (!autoPlay || isPaused) return; 
+      
       const timer = setInterval(nextSlide, interval);
       return () => clearInterval(timer);
-    }, [autoPlay, interval, nextSlide]);
+    }, [autoPlay, interval, nextSlide, isPaused]);
 
     if (!items || items.length === 0) return null;
 
@@ -43,6 +46,9 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
       <div 
         ref={ref} 
         className={cn("relative overflow-hidden w-full rounded-lg group", className)} 
+        // 3. Listen for mouse enter/leave events on the main wrapper
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
         {...props}
       >
         {/* Carousel Track */}
@@ -77,7 +83,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
           </>
         )}
 
-        {/* Bottom Dot */}
+        {/* Bottom Dot Indicators */}
         {showIndicators && (
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             {items.map((_, index) => (
