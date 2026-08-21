@@ -2,9 +2,8 @@ import { Navbar } from "@/components/navbar";
 import ComponentDemo from "../ComponentsDemo";
 
 const NavbarPage = () => {
-  const usageCode = `import ComponentDemo from "../ComponentsDemo";
-      <Navbar />
-
+  const usageCode = `import {Navbar} from "@/components/navbar"
+  
 
   `;
 
