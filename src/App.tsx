@@ -8,18 +8,24 @@ function App() {
   const dispatch = useDispatch();
   const themeMode = useSelector((state: RootState) => state.theme.mode);
 
-  // Check local storage exactly once when the app mounts
+  // Initialize theme from localStorage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     if (savedTheme && savedTheme !== themeMode) {
       dispatch(setTheme(savedTheme));
     }
-  }, [dispatch]); 
+  }, [dispatch]);
 
-
+  // Apply theme to DOM whenever it changes
   useEffect(() => {
     localStorage.setItem("theme", themeMode);
-    document.documentElement.setAttribute("data-theme", themeMode);
+    if (themeMode === "dark") {
+      document.documentElement.classList.add("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.setAttribute("data-theme", "light");
+    }
   }, [themeMode]);
 
   return (
