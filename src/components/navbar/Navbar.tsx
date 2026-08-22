@@ -6,7 +6,6 @@ import { cn } from "@/libs/utils";
 import { entranceAnimations } from "@/libs/animations/entranceAnimation";
 import { hoverAnimations } from "@/libs/animations/hoverAnimation";
 import gsap from "gsap";
-import { Button } from "../Button";
 
 const navbarVariants = cva(
   `w-full flex items-center justify-between px-6 py-4 rounded-md border border-gray-200 transition-all`,
