@@ -1,7 +1,6 @@
 <div align="center">
-  <a href="https://github.com/yourusername/easeui">
-    <!-- PLACEHOLDER: Add your hero banner image here -->
-    <img src="docs/assets/hero-banner.png" alt="EaseUI Banner" width="100%" style="border-radius: 12px; max-width: 800px;" />
+  <a href="https://github.com/abdur4code/easeui">
+    <img src="./public/image.png" alt="EaseUI Banner" width="100%" style="border-radius: 12px; max-width: 800px;" />
   </a>
   
   <br />
@@ -21,6 +20,7 @@
     <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
+    <img src="https://img.shields.io/badge/GSAP-000000?style=for-the-badge&logo=gsap&logoColor=green" alt="GSAP" />
   </p>
 </div>
 
@@ -73,6 +73,8 @@ Browse the `src/components` directory in this repository, select the components 
 ### 3. Usage Example
 Once copied, you can import and use the components immediately. They will automatically inherit your project's Tailwind configuration.
 
+<br />
+
 ```tsx
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
@@ -86,6 +88,7 @@ export default function Showcase() {
     />
   );
 }
+```
 
 <br />
 
@@ -97,7 +100,8 @@ To truly understand what EaseUI offers, you can run our documentation website lo
 
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/easeui.git](https://github.com/yourusername/easeui.git)
+git clone https://github.com/abdur4code/easeui.git
+
 
 # Navigate to the directory
 cd easeui
