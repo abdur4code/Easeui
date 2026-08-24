@@ -75,7 +75,7 @@ const ComponentLayout = () => {
                 <div className="relative pb-0.5">
                   {item.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-gradient-to-r from-indigo-500 to-transparent rounded-full" />
+                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-linear-to-r from-indigo-500 to-transparent rounded-full" />
                   )}
                 </div>
               </li>

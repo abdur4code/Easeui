@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+<div align="center">
+  <a href="https://github.com/yourusername/easeui">
+    <!-- PLACEHOLDER: Add your hero banner image here -->
+    <img src="docs/assets/hero-banner.png" alt="EaseUI Banner" width="100%" style="border-radius: 12px; max-width: 800px;" />
+  </a>
+  
+  <br />
+  <br />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <h1 align="center">EaseUI</h1>
 
-Currently, two official plugins are available:
+  <p align="center">
+    <strong>Ship UI without friction.</strong>
+    <br />
+    A beautifully crafted, accessible, and highly customizable React component library built for modern web applications.
+  </p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <p align="center">
+    <img src="https://img.shields.io/badge/Version-2.0-indigo.svg?style=for-the-badge" alt="Version 2.0" />
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
+  </p>
+</div>
 
-## React Compiler
+<br />
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📖 The Legacy of EaseUI
 
-## Expanding the ESLint configuration
+> *What starts as a lesson can evolve into a legacy.*
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+EaseUI **v1.0** was originally conceived by my instructor, **Devendra Dhote**, as a foundational project. It featured a few core UI components designed to demonstrate basic website structuring and component architecture. 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+He handed me the codebase with a simple challenge: *Understand the architecture and improve it.* 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Through deep dedication and countless hours of engineering, I completely rebuilt the system. **EaseUI v2.0** introduces a massively expanded suite of production-ready components, a dedicated interactive documentation site, and robust architectural improvements. This repository is a testament to that journey of learning and scaling.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## ✨ Features
+
+*   **⚡️ Zero-Friction Integration:** No heavy npm installs or hidden dependencies. Just copy, paste, and customize the components directly into your codebase.
+*   **🛡 Strictly Typed:** Written entirely in TypeScript to provide flawless IDE intellisense and catch errors before they hit production.
+*   **🎨 Highly Customizable:** Built on Tailwind CSS, making it incredibly simple to override default styles, colors, and layouts to match your brand.
+*   **✨ Interactive Animations:** Integrated with GSAP for smooth, hardware-accelerated entrance and hover animations right out of the box.
+*   **📚 Comprehensive Documentation:** A fully featured showcase website with IDE-style code snippets, live previews, and dynamic props tables.
+
+<br />
+
+## 🛠 Tech Stack
+
+The components and the documentation site are built utilizing the following technologies:
+*   **React** (UI Framework)
+*   **Tailwind CSS** (Styling & Layouts)
+*   **TypeScript** (Static Typing)
+*   **Redux Toolkit** (State management for the documentation environment)
+*   **Lucide React** (Icons)
+*   **GSAP** (Complex Animations)
+
+<br />
+
+## 🚀 Quick Start
+
+EaseUI is designed to be a "copy-paste" library. You do not need to install it as an npm package. 
+
+### 1. Prerequisites
+Ensure your project is set up with **React** and **Tailwind CSS**. 
+
+### 2. Add Components
+Browse the `src/components` directory in this repository, select the components you need, and copy them directly into your project's component folder.
+
+### 3. Usage Example
+Once copied, you can import and use the components immediately. They will automatically inherit your project's Tailwind configuration.
+
+```tsx
+import { Card } from "@/components/Card";
+import { Button } from "@/components/Button";
+
+export default function Showcase() {
+  return (
+    <Card <Button animate="{true}" description="This card fades in and features a floating effect on hover!" footer="{" hoverAnimation="jiggle" title="Modern Animated Card" variant="primary">
+          Deploy Now
+        </Button>
+      }
+    />
+  );
+}
+
+<br />
+
+## 📚 Interactive Documentation
+
+To truly understand what EaseUI offers, you can run our documentation website locally. It provides an interactive environment to explore the components, view API reference tables, and copy code snippets.
+
+### Running the Docs Locally
+
+```bash
+# Clone the repository
+git clone [https://github.com/yourusername/easeui.git](https://github.com/yourusername/easeui.git)
+
+# Navigate to the directory
+cd easeui
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to `http://localhost:5173` to interact with the live component gallery and explore the documentation.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🤝 Contributing
+
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make to EaseUI are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request

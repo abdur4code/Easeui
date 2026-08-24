@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Personal/Navbar";
+import Footer from "@/components/Personal/Footer";
 
 type Props = {};
 
@@ -11,6 +12,7 @@ const HomeLayout = ({}: Props) => {
       <main className="grow">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
